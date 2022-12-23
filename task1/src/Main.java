@@ -4,47 +4,49 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        Biodata biodata = new Biodata();
+        Pendidikan pendidikan = new Pendidikan();
         int var, tahun, usia;
-        String fname, lname, domisili, sd, smp, sma, univ;
         char lanjut, input;
         do {
             System.out.println("Siapa Nama Depan Anda= ");
-            fname=sc.nextLine();
+            biodata.setFname(sc.nextLine());
             System.out.println("Siapa Nama Belakang Anda= ");
-            lname=sc.nextLine();
+            biodata.setLname(sc.nextLine());
             System.out.println("Dimana Domisili anda= ");
-            domisili=sc.nextLine();
+            biodata.setDomisili(sc.nextLine());
             System.out.println("Tahun berapa anda lahir? = ");
-            tahun=sc.nextInt();
+            biodata.setTahun(sc.nextInt());
             sc.nextLine();
             System.out.println("Riwayat Pendidikan (SD)= ");
-            sd=sc.nextLine();
+            pendidikan.setSd(sc.nextLine());
             System.out.println("Riwayat Pendidikan (SMP)= ");
-            smp=sc.nextLine();
+            pendidikan.setSmp(sc.nextLine());
             System.out.println("Riwayat Pendidikan (SMA)= ");
-            sma=sc.nextLine();
+            pendidikan.setSma(sc.nextLine());
             System.out.println("Riwayat Pendidikan (Kuliah)= ");
-            univ=sc.nextLine();
+            pendidikan.setUniv(sc.nextLine());
             do{
                 System.out.flush();
+                System.out.println("Pilih Menu = ");
+                System.out.println("1. Biodata = ");
+                System.out.println("2. Riwayat Pendidikan = ");
                 System.out.println("Pilih angka = ");
                 var=sc.nextInt();
-                usia = 2022 - tahun;
                 switch (var)
                 {
                     case 1:
-                        System.out.println("Ini adalah biodata anda");
-                        System.out.println("Nama anda adalah : " + fname + " " + lname);
-                        System.out.println("Tahun anda lahir adalah : " + tahun);
-                        System.out.println("Umur anda adalah : " + usia);
-                        System.out.println("Domisili anda adalah : " + domisili);
+                        biodata.Judul();
+                        biodata.Tahun();
+                        biodata.Umur();
+                        biodata.Domisili();
                         break;
                     case 2:
                         System.out.println("Ini adalah riwayat pendidikan anda");
-                        System.out.println("Pendidikan SD anda adalah : " + sd);
-                        System.out.println("Pendidikan SMP anda adalah : " + smp);
-                        System.out.println("Pendidikan SMA anda adalah : " + sma);
-                        System.out.println("Pendidikan KULIAH anda adalah : " + univ);
+                        pendidikan.Sd();
+                        pendidikan.Smp();
+                        pendidikan.Sma();
+                        pendidikan.Kuliah();
                         break;
                     default:
                         System.out.println("tidak ada pilihan");
